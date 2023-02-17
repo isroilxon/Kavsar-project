@@ -20,6 +20,8 @@
 		048FD5A6299C00E20060A447 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FD5A5299C00E20060A447 /* HomeTableViewCell.swift */; };
 		048FD5A8299C00FF0060A447 /* HeaderHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FD5A7299C00FF0060A447 /* HeaderHome.swift */; };
 		048FD5AA299C01330060A447 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FD5A9299C01330060A447 /* model.swift */; };
+		04DBED89299FD0EB00259FA6 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBED88299FD0EB00259FA6 /* MessageTableViewCell.swift */; };
+		04DBED8B299FD72400259FA6 /* modelForMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBED8A299FD72400259FA6 /* modelForMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		048FD5A5299C00E20060A447 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		048FD5A7299C00FF0060A447 /* HeaderHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderHome.swift; sourceTree = "<group>"; };
 		048FD5A9299C01330060A447 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
+		04DBED88299FD0EB00259FA6 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		04DBED8A299FD72400259FA6 /* modelForMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelForMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,13 +74,13 @@
 		048FD57C299BA3CA0060A447 /* Kavsar project */ = {
 			isa = PBXGroup;
 			children = (
+				04DBED87299FD0B700259FA6 /* Message */,
 				048FD5A4299C00BE0060A447 /* account */,
 				048FD595299BA6CD0060A447 /* main */,
 				048FD596299BA6F60060A447 /* layout.swift */,
 				048FD598299BA7630060A447 /* TabBarViewController.swift */,
 				048FD59A299BA7DC0060A447 /* HomeViewController.swift */,
 				048FD59C299BA7F00060A447 /* CategoryViewController.swift */,
-				048FD59E299BA8020060A447 /* MessageViewController.swift */,
 				048FD5A0299BA8DA0060A447 /* ShopcartViewController.swift */,
 				048FD58B299BA3CC0060A447 /* Info.plist */,
 			);
@@ -102,6 +106,16 @@
 				048FD5A9299C01330060A447 /* model.swift */,
 			);
 			path = account;
+			sourceTree = "<group>";
+		};
+		04DBED87299FD0B700259FA6 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				048FD59E299BA8020060A447 /* MessageViewController.swift */,
+				04DBED88299FD0EB00259FA6 /* MessageTableViewCell.swift */,
+				04DBED8A299FD72400259FA6 /* modelForMessage.swift */,
+			);
+			path = Message;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,10 +189,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				048FD5A1299BA8DA0060A447 /* ShopcartViewController.swift in Sources */,
+				04DBED8B299FD72400259FA6 /* modelForMessage.swift in Sources */,
 				048FD59D299BA7F00060A447 /* CategoryViewController.swift in Sources */,
 				048FD5AA299C01330060A447 /* model.swift in Sources */,
 				048FD5A3299BA8E80060A447 /* AccountViewController.swift in Sources */,
 				048FD5A8299C00FF0060A447 /* HeaderHome.swift in Sources */,
+				04DBED89299FD0EB00259FA6 /* MessageTableViewCell.swift in Sources */,
 				048FD599299BA7630060A447 /* TabBarViewController.swift in Sources */,
 				048FD597299BA6F60060A447 /* layout.swift in Sources */,
 				048FD57E299BA3CA0060A447 /* AppDelegate.swift in Sources */,
