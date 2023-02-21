@@ -20,6 +20,14 @@ class MessageViewController: UIViewController {
         MenuMessage(img: "per5", label1: "AvalonCenter", label2: "yangiliklar va aksiyalar ro'yxati"),
         MenuMessage(img: "per6", label1: "Abror", label2: "jsdncvs s so nsd sd sd dsj nsdln"),
         MenuMessage(img: "per7", label1: "globalClothes", label2: "sfvsbv s vh vfvbdfbvbf"),
+        MenuMessage(img: "per8", label1: "Foods", label2: "dsvnbvsv jnfjnvjfn bdjhbthouheh"),
+        MenuMessage(img: "per1", label1: "James", label2: "salom qalaysiz"),
+        MenuMessage(img: "per2", label1: "Anvar", label2: "buyurtmangiz yo'lga chiqdi"),
+        MenuMessage(img: "per3", label1: "GoodPhone", label2: "Rangini tanlang"),
+        MenuMessage(img: "per4", label1: "Sobir", label2: "to'lvni amalga oshirlingan chekni"),
+        MenuMessage(img: "per5", label1: "AvalonCenter", label2: "yangiliklar va aksiyalar ro'yxati"),
+        MenuMessage(img: "per6", label1: "Abror", label2: "jsdncvs s so nsd sd sd dsj nsdln"),
+        MenuMessage(img: "per7", label1: "globalClothes", label2: "sfvsbv s vh vfvbdfbvbf"),
         MenuMessage(img: "per8", label1: "Foods", label2: "dsvnbvsv jnfjnvjfn bdjhbthouheh")
     
     ]

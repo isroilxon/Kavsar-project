@@ -2,48 +2,14 @@
 
 import UIKit
 
-class AccountViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return arr.count
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0{
-            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header")
-            header?.contentView.backgroundColor = .white
-            return header
-        }
-        else{
-            let header  = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header2")
-            return header
-        }
-        
-    }
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arr[section].list.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeTableViewCell
-        cell.img1.image = UIImage(systemName: arr[indexPath.section].list[indexPath.row].img)
-        cell.img1.tintColor = .black
-        cell.label.text = arr[indexPath.section].list[indexPath.row].label
-        return cell
-        
-    }
-    
-    
-    
+class AccountViewController: UIViewController {
     
     
     let tableView = UITableView(frame: .zero, style: .grouped)
     let search = UIButton()
     let backTab = UIView()
     let arr:[Category] = [
+        Category(name: "", list: []),
         Category(name: "General", list: [
             Menu(img: "cube", label: "Orders"),
             Menu(img: "star", label: "Product Reviews"),
@@ -111,8 +77,58 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "header2")
         tableView.backgroundColor = .white
         tableView.separatorStyle = .none
-        tableView.showsVerticalScrollIndicator = false
+        
     }
     
+    
+}
+
+extension AccountViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0{
+            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header")
+            header?.contentView.backgroundColor = .white
+            return header
+        }
+        else{
+            let header  = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header2")
+            return header
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section != 0 {
+            return arr[section].name
+        }
+        return ""
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return arr.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arr[section].list.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeTableViewCell
+        cell.img1.image = UIImage(systemName: arr[indexPath.section].list[indexPath.row].img)
+        cell.img1.tintColor = .black
+        cell.label.text = arr[indexPath.section].list[indexPath.row].label
+        cell.selectionStyle = .none
+        return cell
+        
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ProfilItemsVC()
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
 }

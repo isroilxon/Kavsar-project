@@ -16,13 +16,19 @@ class MessageTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(img)
         img.translatesAutoresizingMaskIntoConstraints = false
         img.top(contentView.topAnchor, 10)
         img.left(contentView.leftAnchor, 10)
         img.bottom(contentView.bottomAnchor, -10)
-        img.width(70)
-        img.height(70)
+        img.width(50)
+        img.height(50)
+        img.clipsToBounds = true
+        img.layer.cornerRadius = 25
         
         contentView.addSubview(label3)
         label3.translatesAutoresizingMaskIntoConstraints = false
@@ -35,19 +41,21 @@ class MessageTableViewCell: UITableViewCell {
         label1.translatesAutoresizingMaskIntoConstraints = false
         label1.top(contentView.topAnchor, 10)
         label1.left(img.rightAnchor, 10)
-        label1.right(label3.leftAnchor, -5)
         label1.font = .systemFont(ofSize: 25)
         
         contentView.addSubview(label2)
         label2.translatesAutoresizingMaskIntoConstraints = false
-        label2.left(contentView.leftAnchor, 10)
+        label2.left(img.rightAnchor, 10)
         label2.right(contentView.rightAnchor, -10)
         label2.bottom(contentView.bottomAnchor, -10)
         label2.font = .systemFont(ofSize: 15)
-        
-        
     }
-
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

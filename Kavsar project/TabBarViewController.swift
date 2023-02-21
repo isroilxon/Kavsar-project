@@ -1,9 +1,4 @@
-//
-//  TabBarViewController.swift
-//  Kavsar project
-//
-//  Created by mac on 14/02/23.
-//
+
 
 import UIKit
 
@@ -24,11 +19,18 @@ class TabBarViewController: UITabBarController {
     let imgShop2 = UIImage(systemName: "basket.fill")
     let imgAcc1 = UIImage(systemName: "person")
     let imgAcc2 = UIImage(systemName: "person.fill")
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "tabbar"
+
+
         
-        UITabBar.appearance().tintColor = UIColor.systemGreen
+        UITabBar.appearance().tintColor = UIColor.blue
                 
         tabHome.tabBarItem = UITabBarItem(title: "home", image: imgHome1, selectedImage: imgHome2)
         tabCateg.tabBarItem = UITabBarItem(title: "category", image: imgCat1, selectedImage: imgCat2)
