@@ -30,7 +30,7 @@ class CollectionViewCell: UICollectionViewCell {
         label.left(contentView.leftAnchor, 5)
         label.numberOfLines = 0
         label.bottom(contentView.bottomAnchor, -10)
-        label.text = "salsj"
+        label.text = "hello"
     }
     
     required init?(coder: NSCoder) {
