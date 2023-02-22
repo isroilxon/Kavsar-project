@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0428652D29A131A60060D078 /* ShopCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428652C29A131A60060D078 /* ShopCartTableViewCell.swift */; };
 		0428653129A133C70060D078 /* modelShopcart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428653029A133C70060D078 /* modelShopcart.swift */; };
+		04719D0629A6566E00B4F65D /* modelHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04719D0529A6566E00B4F65D /* modelHome.swift */; };
 		048FD57E299BA3CA0060A447 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FD57D299BA3CA0060A447 /* AppDelegate.swift */; };
 		048FD587299BA3CC0060A447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048FD586299BA3CC0060A447 /* Assets.xcassets */; };
 		048FD58A299BA3CC0060A447 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048FD588299BA3CC0060A447 /* LaunchScreen.storyboard */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		0428652C29A131A60060D078 /* ShopCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCartTableViewCell.swift; sourceTree = "<group>"; };
 		0428653029A133C70060D078 /* modelShopcart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelShopcart.swift; sourceTree = "<group>"; };
+		04719D0529A6566E00B4F65D /* modelHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelHome.swift; sourceTree = "<group>"; };
 		048FD57A299BA3CA0060A447 /* Kavsar project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kavsar project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		048FD57D299BA3CA0060A447 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		048FD586299BA3CC0060A447 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +77,15 @@
 			path = Shopcart;
 			sourceTree = "<group>";
 		};
+		04719D0429A6563800B4F65D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				048FD59A299BA7DC0060A447 /* HomeViewController.swift */,
+				04719D0529A6566E00B4F65D /* modelHome.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		048FD571299BA3C90060A447 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +105,7 @@
 		048FD57C299BA3CA0060A447 /* Kavsar project */ = {
 			isa = PBXGroup;
 			children = (
+				04719D0429A6563800B4F65D /* Home */,
 				04A1AF2D29A2DA6700791FC2 /* Category */,
 				0428652B29A1317B0060D078 /* Shopcart */,
 				04DBED87299FD0B700259FA6 /* Message */,
@@ -101,7 +113,6 @@
 				048FD595299BA6CD0060A447 /* main */,
 				048FD596299BA6F60060A447 /* layout.swift */,
 				048FD598299BA7630060A447 /* TabBarViewController.swift */,
-				048FD59A299BA7DC0060A447 /* HomeViewController.swift */,
 				048FD58B299BA3CC0060A447 /* Info.plist */,
 			);
 			path = "Kavsar project";
@@ -229,6 +240,7 @@
 				048FD5A3299BA8E80060A447 /* AccountViewController.swift in Sources */,
 				048FD5A8299C00FF0060A447 /* HeaderHome.swift in Sources */,
 				04A1AF3129A2DF9200791FC2 /* modelCategory.swift in Sources */,
+				04719D0629A6566E00B4F65D /* modelHome.swift in Sources */,
 				04DBED89299FD0EB00259FA6 /* MessageTableViewCell.swift in Sources */,
 				048FD599299BA7630060A447 /* TabBarViewController.swift in Sources */,
 				048FD597299BA6F60060A447 /* layout.swift in Sources */,

@@ -21,7 +21,9 @@ class CollectionViewCell: UICollectionViewCell {
         img.right(contentView.rightAnchor, -5)
         img.clipsToBounds = true
         img.layer.cornerRadius = 10
-        img.image = UIImage(systemName: "house")
+        img.contentMode = .scaleAspectFit
+        img.height(150)
+        img.width(100)
         
         label.translateFalse()
         contentView.addSubview(label)
@@ -30,7 +32,7 @@ class CollectionViewCell: UICollectionViewCell {
         label.left(contentView.leftAnchor, 5)
         label.numberOfLines = 0
         label.bottom(contentView.bottomAnchor, -10)
-        label.text = "hello"
+        label.text = "sjbvjsb"
     }
     
     required init?(coder: NSCoder) {

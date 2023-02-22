@@ -31,7 +31,8 @@ class CategoryViewController: UIViewController {
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = .init(width: 100, height: 150)
+        layout.estimatedItemSize = .init(width: 100, height: 150)
+        layout.itemSize = UICollectionViewFlowLayout.automaticSize
         
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -60,9 +61,8 @@ extension CategoryViewController: UICollectionViewDelegateFlowLayout, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         cell.label.text = arr[indexPath.row].label
+//        print(arr[indexPath.row].label)
         cell.img.image = UIImage(named: arr[indexPath.row].img)
-//        cell.contentView.backgroundColor = .green
-//        cell.label.text = model[indexPath.row]
         return cell
     }
     
