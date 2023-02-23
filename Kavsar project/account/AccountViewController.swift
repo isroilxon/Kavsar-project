@@ -10,41 +10,48 @@ class AccountViewController: UIViewController {
     let backTab = UIView()
     let arr:[Category] = [
         Category(name: "", list: []),
-        Category(name: "General", list: [
-            Menu(img: "cube", label: "Orders"),
-            Menu(img: "star", label: "Product Reviews"),
-            Menu(img: "heart", label: "Favourites"),
-            Menu(img: "house.and.flag", label: "Favorite shops"),
-            Menu(img: "mail", label: "Coupons"),
-            Menu(img: "ellipsis.message", label: "Message")
+        Category(name: "Asosiy", list: [
+            Menu(img: "cube", label: "Buyurtmalar"),
+//            Menu(img: "star", label: "Product Reviews"),
+            Menu(img: "heart", label: "Tanlanganlar"),
+            Menu(img: "location", label: "Bizning Filial")
+//            Menu(img: "house.and.flag", label: "Favorite shops"),
+//            Menu(img: "mail", label: "Coupons"),
+//            Menu(img: "ellipsis.message", label: "Message")
         ]),
-        Category(name: "Settings", list: [
-            Menu(img: "location", label: "Delivery adresses"),
-            Menu(img: "creditcard", label: "Saved cards"),
-            Menu(img: "gearshape", label: "Personal info"),
-            Menu(img: "bell", label: "Notifications")
-        ]),
-        Category(name: "Personal", list: [
-            Menu(img: "location.magnifyingglass", label: "Uzbekistan"),
-            Menu(img: "network", label: "English"),
-            Menu(img: "creditcard.and.123", label: "Uzbekistan som")
-        
-        ]),
-        Category(name: "Information", list: [
-            Menu(img: "beats.headphones", label: "Support"),
-            Menu(img: "book", label: "Kavsar Magazine"),
-            Menu(img: "figure.walk.arrival", label: "How to open a store on Kavsar"),
-            Menu(img: "exclamationmark.circle", label: "About the app"),
-            Menu(img: "rectangle.portrait.and.arrow.right", label: "Sign out")
+        Category(name: "Qo'shimcha", list: [
+            Menu(img: "network", label: "Til"),
+            Menu(img: "beats.headphones", label: "Biz bilan bog'lanish"),
+            Menu(img: "rectangle.portrait.and.arrow.right", label: "Dasturdan chiqish")
         
         ])
+//        Category(name: "Settings", list: [
+//            Menu(img: "location", label: "Delivery adresses"),
+//            Menu(img: "creditcard", label: "Saved cards"),
+//            Menu(img: "gearshape", label: "Personal info"),
+//            Menu(img: "bell", label: "Notifications")
+//        ]),
+//        Category(name: "Personal", list: [
+//            Menu(img: "location.magnifyingglass", label: "Uzbekistan"),
+//            Menu(img: "network", label: "English"),
+//            Menu(img: "creditcard.and.123", label: "Uzbekistan som")
+//
+//        ]),
+//        Category(name: "Information", list: [
+//            Menu(img: "beats.headphones", label: "Support"),
+//            Menu(img: "book", label: "Kavsar Magazine"),
+//            Menu(img: "figure.walk.arrival", label: "How to open a store on Kavsar"),
+//            Menu(img: "exclamationmark.circle", label: "About the app"),
+//            Menu(img: "rectangle.portrait.and.arrow.right", label: "Sign out")
+//
+//        ])
     ]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        title = "Setting"
+        view.backgroundColor = .systemGray6
+        title = "Sozlamalar"
         navigationController?.navigationBar.prefersLargeTitles = true
         setView()
         

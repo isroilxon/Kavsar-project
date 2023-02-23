@@ -10,30 +10,26 @@ import UIKit
 class CategoryViewController: UIViewController {
     var collectionView: UICollectionView?
     let arr: [ModelCateg] = [
-        ModelCateg(label: "Women's Clothing", img: "womenc"),
-        ModelCateg(label: "men's clothings", img: "menclothes"),
-        ModelCateg(label: "Phones & Telecommunication", img: "phones"),
-        ModelCateg(label: "Mother $ Kids", img: "mother"),
-        ModelCateg(label: "Jewelery & Accessories", img: "Jewellery"),
-        ModelCateg(label: "Computer & Office", img: "computer"),
-        ModelCateg(label: "Luggage & Bags", img: "bag"),
-        ModelCateg(label: "Toys & Hobbies", img: "toys"),
-        ModelCateg(label: "Home & Garden", img: "garden"),
-        ModelCateg(label: "Beaty & Health", img: "beaty"),
-        ModelCateg(label: "Home Improvement", img: "home"),
-        ModelCateg(label: "Education & Office Supplies", img: "edcation")
+        ModelCateg(label: "quvvatlagich", img: "charger"),
+        ModelCateg(label: "Kalonkalar", img: "speaker"),
+        ModelCateg(label: "Aftomabil quvvatlagich", img: "autocharger"),
+        ModelCateg(label: "Aftomabil holderlari", img: "holder"),
+        ModelCateg(label: "Quloqchinlar", img: "earphone"),
+        ModelCateg(label: "Simsiz quloqchinlar", img: "earpods"),
+        ModelCateg(label: "Simsiz quloqchinlar", img: "streo"),
+        ModelCateg(label: "Aux kabellar", img: "aux"),
+        ModelCateg(label: "Qo'shimcha", img: "adapter")
     
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGray6
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.estimatedItemSize = .init(width: 100, height: 150)
         layout.itemSize = UICollectionViewFlowLayout.automaticSize
-        
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         guard let collectionView = collectionView else { return }
@@ -48,6 +44,7 @@ class CategoryViewController: UIViewController {
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        collectionView.backgroundColor = .systemGray6
         
         
         

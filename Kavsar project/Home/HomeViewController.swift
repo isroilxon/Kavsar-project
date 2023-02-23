@@ -11,13 +11,14 @@ class HomeViewController: UIViewController {
     let imgCat4 = UIImageView()
     let imgCat5 = UIImageView()
     let imgCat6 = UIImageView()
-    let M = UILabel()
-    let agn = UILabel()
+    let Euro = UILabel()
+    let Mobile = UILabel()
     let searchView = UIView()
     let lupa = UIButton()
     let textField = UITextField()
     let cam = UIButton()
     let stackView = UIStackView()
+    let logoView = UIView()
     let arr: [CategoryHome] = [
         CategoryHome(img: "1", label: "hello"),
         CategoryHome(img: "2", label: "hello"),
@@ -27,6 +28,8 @@ class HomeViewController: UIViewController {
         CategoryHome(img: "6", label: "hello")
         
     ]
+    var collectionView: UICollectionView?
+
     
     
     
@@ -55,29 +58,35 @@ class HomeViewController: UIViewController {
     
     func scrollView(){
         
-        M.translateFalse()
-        view.addSubview(M)
-        M.top(view.topAnchor, 90)
-        M.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        M.text = "M"
-        M.font = .systemFont(ofSize: 30)
-        M.textColor = .systemRed
+        logoView.translateFalse()
+        view.addSubview(logoView)
+        logoView.top(view.topAnchor, 90)
+        logoView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
-        agn.translateFalse()
-        view.addSubview(agn)
-        agn.top(view.topAnchor, 90)
-        agn.left(M.rightAnchor, 0)
-        agn.text = "agnet"
-        agn.font = .systemFont(ofSize: 30)
-        agn.textColor = .blue
+        Euro.translateFalse()
+        logoView.addSubview(Euro)
+        Euro.top(logoView.topAnchor, 0)
+        Euro.left(logoView.leftAnchor, 0)
+        Euro.text = "Euro"
+        Euro.font = .systemFont(ofSize: 30)
+        Euro.textColor = .red
+        
+        Mobile.translateFalse()
+        logoView.addSubview(Mobile)
+        Mobile.top(logoView.topAnchor, 0)
+        Mobile.left(Euro.rightAnchor, 0)
+        Mobile.right(logoView.rightAnchor, 0)
+        Mobile.text = "Mobile"
+        Mobile.font = .systemFont(ofSize: 30)
+        Mobile.textColor = .blue
         
         searchView.translateFalse()
         view.addSubview(searchView)
-        searchView.top(M.bottomAnchor, 10)
+        searchView.top(Euro.bottomAnchor, 10)
         searchView.left(view.leftAnchor, 10)
         searchView.right(view.rightAnchor, -10)
         searchView.layer.cornerRadius = 10
-        searchView.layer.borderColor = UIColor.red.cgColor
+        searchView.layer.borderColor = UIColor.systemGray4.cgColor
         searchView.layer.borderWidth = 2
         
         lupa.translateFalse()
@@ -117,6 +126,7 @@ class HomeViewController: UIViewController {
         scroll.right(view.rightAnchor, -10)
         scroll.height(110)
 
+
         
         stackView.translateFalse()
         scroll.addSubview(stackView)
@@ -155,6 +165,45 @@ class HomeViewController: UIViewController {
         
     }
     
+    func tavar(){
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.estimatedItemSize = .init(width: 100, height: 150)
+        layout.itemSize = UICollectionViewFlowLayout.automaticSize
+        
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        guard let collectionView = collectionView else { return }
+        collectionView.translatesAutoresizingMaskIntoConstraints =  false
+        view.addSubview(collectionView)
+        collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        collectionView.backgroundColor = .systemGray6
+    }
+    
+    
+    
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        arr.count
+        5
+
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+//        cell.label.text = arr[indexPath.row].label
+//        cell.img.image = UIImage(named: arr[indexPath.row].img)
+        return cell
+    }
     
     
 }

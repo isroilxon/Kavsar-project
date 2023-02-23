@@ -10,6 +10,7 @@
 		0428652D29A131A60060D078 /* ShopCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428652C29A131A60060D078 /* ShopCartTableViewCell.swift */; };
 		0428653129A133C70060D078 /* modelShopcart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0428653029A133C70060D078 /* modelShopcart.swift */; };
 		04719D0629A6566E00B4F65D /* modelHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04719D0529A6566E00B4F65D /* modelHome.swift */; };
+		04719D0829A6941100B4F65D /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04719D0729A6941100B4F65D /* HomeCollectionViewCell.swift */; };
 		048FD57E299BA3CA0060A447 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FD57D299BA3CA0060A447 /* AppDelegate.swift */; };
 		048FD587299BA3CC0060A447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048FD586299BA3CC0060A447 /* Assets.xcassets */; };
 		048FD58A299BA3CC0060A447 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048FD588299BA3CC0060A447 /* LaunchScreen.storyboard */; };
@@ -34,6 +35,7 @@
 		0428652C29A131A60060D078 /* ShopCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCartTableViewCell.swift; sourceTree = "<group>"; };
 		0428653029A133C70060D078 /* modelShopcart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelShopcart.swift; sourceTree = "<group>"; };
 		04719D0529A6566E00B4F65D /* modelHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelHome.swift; sourceTree = "<group>"; };
+		04719D0729A6941100B4F65D /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		048FD57A299BA3CA0060A447 /* Kavsar project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kavsar project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		048FD57D299BA3CA0060A447 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		048FD586299BA3CC0060A447 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				048FD59A299BA7DC0060A447 /* HomeViewController.swift */,
+				04719D0729A6941100B4F65D /* HomeCollectionViewCell.swift */,
 				04719D0529A6566E00B4F65D /* modelHome.swift */,
 			);
 			path = Home;
@@ -245,6 +248,7 @@
 				048FD599299BA7630060A447 /* TabBarViewController.swift in Sources */,
 				048FD597299BA6F60060A447 /* layout.swift in Sources */,
 				048FD57E299BA3CA0060A447 /* AppDelegate.swift in Sources */,
+				04719D0829A6941100B4F65D /* HomeCollectionViewCell.swift in Sources */,
 				048FD5A6299C00E20060A447 /* HomeTableViewCell.swift in Sources */,
 				048FD59F299BA8020060A447 /* MessageViewController.swift in Sources */,
 				048FD59B299BA7DC0060A447 /* HomeViewController.swift in Sources */,

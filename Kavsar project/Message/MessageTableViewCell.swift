@@ -41,14 +41,14 @@ class MessageTableViewCell: UITableViewCell {
         label1.translatesAutoresizingMaskIntoConstraints = false
         label1.top(contentView.topAnchor, 10)
         label1.left(img.rightAnchor, 10)
-        label1.font = .systemFont(ofSize: 25)
+        label1.font = .systemFont(ofSize: 15)
         
         contentView.addSubview(label2)
         label2.translatesAutoresizingMaskIntoConstraints = false
         label2.left(img.rightAnchor, 10)
         label2.right(contentView.rightAnchor, -10)
         label2.bottom(contentView.bottomAnchor, -10)
-        label2.font = .systemFont(ofSize: 15)
+        label2.font = .systemFont(ofSize: 12)
     }
     
     

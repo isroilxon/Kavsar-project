@@ -32,11 +32,11 @@ class TabBarViewController: UITabBarController {
         
         UITabBar.appearance().tintColor = UIColor.blue
                 
-        tabHome.tabBarItem = UITabBarItem(title: "home", image: imgHome1, selectedImage: imgHome2)
-        tabCateg.tabBarItem = UITabBarItem(title: "category", image: imgCat1, selectedImage: imgCat2)
-        tabMessag.tabBarItem = UITabBarItem(title: "message", image: imgMess1, selectedImage: imgMess2)
-        tabShop.tabBarItem = UITabBarItem(title: "shopcart", image: imgShop1, selectedImage: imgShop2)
-        tabAcc.tabBarItem = UITabBarItem(title: "account", image: imgAcc1, selectedImage: imgAcc2)
+        tabHome.tabBarItem = UITabBarItem(title: "Bosh Sahifa", image: imgHome1, selectedImage: imgHome2)
+        tabCateg.tabBarItem = UITabBarItem(title: "Kategoriya", image: imgCat1, selectedImage: imgCat2)
+        tabMessag.tabBarItem = UITabBarItem(title: "Xabarlar", image: imgMess1, selectedImage: imgMess2)
+        tabShop.tabBarItem = UITabBarItem(title: "Savatcha", image: imgShop1, selectedImage: imgShop2)
+        tabAcc.tabBarItem = UITabBarItem(title: "Profil", image: imgAcc1, selectedImage: imgAcc2)
         
         let viewControllerList = [tabHome, tabCateg,tabMessag,tabShop,tabAcc]
         viewControllers = viewControllerList.map {
