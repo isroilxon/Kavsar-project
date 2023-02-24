@@ -58,7 +58,7 @@ class ProfilViewController: UIViewController {
     }
     
     @objc func photobutton(){
-        print("photo")
+        print("hello photo")
         let vc = UIImagePickerController()
         vc.sourceType = .camera
         vc.delegate = self
