@@ -51,7 +51,7 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray6
-        title = "Sozlamalar"
+        title = "Profil"
         navigationController?.navigationBar.prefersLargeTitles = true
         setView()
         
@@ -94,8 +94,19 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0{
-            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header")
-            header?.contentView.backgroundColor = .white
+            let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as! HeaderHome
+            header.complition = { item in
+                if item {
+                    print("qiymat keldi")
+                    let vc = ProfilViewController()
+                    vc.complition = { item in
+                        header.label2.text = item
+                        print(item)
+                    }
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
+            header.contentView.backgroundColor = .white
             return header
         }
         else{

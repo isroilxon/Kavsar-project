@@ -26,6 +26,7 @@
 		048FD5AA299C01330060A447 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FD5A9299C01330060A447 /* model.swift */; };
 		04A1AF2F29A2DA9200791FC2 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1AF2E29A2DA9200791FC2 /* CollectionViewCell.swift */; };
 		04A1AF3129A2DF9200791FC2 /* modelCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1AF3029A2DF9200791FC2 /* modelCategory.swift */; };
+		04D3AB9B29A7C9E80030BF06 /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3AB9A29A7C9E80030BF06 /* ProfilViewController.swift */; };
 		04DBED89299FD0EB00259FA6 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBED88299FD0EB00259FA6 /* MessageTableViewCell.swift */; };
 		04DBED8B299FD72400259FA6 /* modelForMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBED8A299FD72400259FA6 /* modelForMessage.swift */; };
 		04DBED8D299FEE6B00259FA6 /* ProfilItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBED8C299FEE6B00259FA6 /* ProfilItemsVC.swift */; };
@@ -53,6 +54,7 @@
 		048FD5A9299C01330060A447 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		04A1AF2E29A2DA9200791FC2 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		04A1AF3029A2DF9200791FC2 /* modelCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelCategory.swift; sourceTree = "<group>"; };
+		04D3AB9A29A7C9E80030BF06 /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
 		04DBED88299FD0EB00259FA6 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		04DBED8A299FD72400259FA6 /* modelForMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelForMessage.swift; sourceTree = "<group>"; };
 		04DBED8C299FEE6B00259FA6 /* ProfilItemsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilItemsVC.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				04DBED8C299FEE6B00259FA6 /* ProfilItemsVC.swift */,
 				048FD5A5299C00E20060A447 /* HomeTableViewCell.swift */,
 				048FD5A7299C00FF0060A447 /* HeaderHome.swift */,
+				04D3AB9A29A7C9E80030BF06 /* ProfilViewController.swift */,
 				048FD5A9299C01330060A447 /* model.swift */,
 			);
 			path = account;
@@ -242,6 +245,7 @@
 				048FD5AA299C01330060A447 /* model.swift in Sources */,
 				048FD5A3299BA8E80060A447 /* AccountViewController.swift in Sources */,
 				048FD5A8299C00FF0060A447 /* HeaderHome.swift in Sources */,
+				04D3AB9B29A7C9E80030BF06 /* ProfilViewController.swift in Sources */,
 				04A1AF3129A2DF9200791FC2 /* modelCategory.swift in Sources */,
 				04719D0629A6566E00B4F65D /* modelHome.swift in Sources */,
 				04DBED89299FD0EB00259FA6 /* MessageTableViewCell.swift in Sources */,

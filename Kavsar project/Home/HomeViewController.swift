@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "Home"
+        title = "Asosiy menyu"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bell.badge"), style: .plain, target: self, action: #selector(add))
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(add))
@@ -46,6 +46,7 @@ class HomeViewController: UIViewController {
         
         scrollView()
         stack()
+        tavar()
         
         
         
@@ -175,10 +176,10 @@ class HomeViewController: UIViewController {
         guard let collectionView = collectionView else { return }
         collectionView.translatesAutoresizingMaskIntoConstraints =  false
         view.addSubview(collectionView)
-        collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        collectionView.top(stackView.bottomAnchor, 20)
         collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        collectionView.bottom(view.bottomAnchor, -90)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
@@ -199,7 +200,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeCollectionViewCell
 //        cell.label.text = arr[indexPath.row].label
 //        cell.img.image = UIImage(named: arr[indexPath.row].img)
         return cell
