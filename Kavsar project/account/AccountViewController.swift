@@ -103,8 +103,18 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource{
                         header.label2.text = item
                         print(item)
                     }
+//                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
+            header.complition2 = { i in
+                if i {
+                    let vc = ProfilViewController()
+                    vc.complition2 = { i in
+                        header.person.image = i
+                    }
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
+                
             }
             header.contentView.backgroundColor = .white
             return header

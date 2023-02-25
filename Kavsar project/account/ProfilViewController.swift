@@ -8,43 +8,131 @@
 import UIKit
 
 class ProfilViewController: UIViewController {
-    let button  = UIButton()
-    let textField = UITextField()
+    let buttonsave  = UIButton()
+    let buttonsave1 = UIButton()
+    let textField1 = UITextField()
+    let textField2 = UITextField()
+    let textField3 = UITextField()
     var complition: ((String) -> Void)?
+    var complition2: ((UIImage) -> Void)?
     let buttonPhoto = UIImageView()
+    let viewSetting = UIView()
+    let viewSetting2 = UIView()
+    let camera = UIImageView()
+    let phoneImage = UIImageView()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        viewSetting.translateFalse()
+        view.addSubview(viewSetting)
+        viewSetting.top(view.safeAreaLayoutGuide.topAnchor, 20)
+        viewSetting.left(view.leftAnchor, 10)
+        viewSetting.right(view.rightAnchor, -10)
+        viewSetting.height(70)
+        viewSetting.layer.cornerRadius = 10
+        viewSetting.backgroundColor = .systemGray6
+        
         buttonPhoto.translateFalse()
-        view.addSubview(buttonPhoto)
-        buttonPhoto.top(view.safeAreaLayoutGuide.topAnchor, 20)
-        buttonPhoto.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        buttonPhoto.width(150)
-        buttonPhoto.height(150)
-        buttonPhoto.backgroundColor = .gray
+        viewSetting.addSubview(buttonPhoto)
+        buttonPhoto.top(viewSetting.topAnchor, 5)
+        buttonPhoto.left(viewSetting.leftAnchor, 5)
+        buttonPhoto.bottom(viewSetting.bottomAnchor, -5)
+        buttonPhoto.width(60)
+        buttonPhoto.clipsToBounds = true
+        buttonPhoto.layer.cornerRadius = 30
+        buttonPhoto.image = UIImage(systemName: "person.circle.fill")
+        buttonPhoto.tintColor = .gray
         let tap = UITapGestureRecognizer(target: self, action: #selector(photobutton))
         buttonPhoto.addGestureRecognizer(tap)
         buttonPhoto.isUserInteractionEnabled = true
         
-        textField.translateFalse()
-        view.addSubview(textField)
-        textField.top(buttonPhoto.bottomAnchor, 20)
-        textField.left(view.leftAnchor, 10)
-        textField.right(view.rightAnchor, -10)
-        textField.height(60)
-        textField.backgroundColor = .systemGray6
+        camera.translateFalse()
+        buttonPhoto.addSubview(camera)
+        camera.centerXAnchor.constraint(equalTo: buttonPhoto.centerXAnchor).isActive = true
+        camera.centerYAnchor.constraint(equalTo: buttonPhoto.centerYAnchor).isActive = true
+        camera.height(20)
+        camera.width(20)
+        camera.image = UIImage(systemName: "camera")
+        camera.tintColor = .white
         
-        button.translateFalse()
-        view.addSubview(button)
-        button.top(textField.bottomAnchor, 20)
-        button.left(view.leftAnchor, 10)
-        button.right(view.rightAnchor, -10)
-        button.height(50)
-        button.backgroundColor = .red
-        button.addTarget(self, action: #selector(textBut), for: .touchUpInside)
+        textField1.translateFalse()
+        viewSetting.addSubview(textField1)
+        textField1.top(viewSetting.topAnchor, 0)
+        textField1.left(buttonPhoto.rightAnchor, 0)
+        textField1.right(viewSetting.rightAnchor, 0)
+        textField1.height(32)
+        textField1.placeholder = "Ism"
+        textField1.clipsToBounds = true
+        textField1.layer.cornerRadius = 10
+        textField1.backgroundColor = .systemGray6
+        
+        textField2.translateFalse()
+        viewSetting.addSubview(textField2)
+        textField2.left(buttonPhoto.rightAnchor, 0)
+        textField2.right(viewSetting.rightAnchor, 0)
+        textField2.bottom(viewSetting.bottomAnchor, 0)
+        textField2.height(32)
+        textField2.placeholder = "Familya"
+        textField2.clipsToBounds = true
+        textField2.layer.cornerRadius = 10
+        textField2.backgroundColor = .systemGray6
+        
+        viewSetting2.translateFalse()
+        view.addSubview(viewSetting2)
+        viewSetting2.top(viewSetting.bottomAnchor, 20)
+        viewSetting2.left(view.leftAnchor, 10)
+        viewSetting2.right(view.rightAnchor, -10)
+        viewSetting2.height(50)
+        viewSetting2.layer.cornerRadius = 10
+        viewSetting2.backgroundColor = .systemGray6
+        
+        phoneImage.translateFalse()
+        viewSetting2.addSubview(phoneImage)
+        phoneImage.left(viewSetting2.leftAnchor, 5)
+        phoneImage.centerYAnchor.constraint(equalTo: viewSetting2.centerYAnchor).isActive = true
+        phoneImage.width(30)
+        phoneImage.height(30)
+        phoneImage.image = UIImage(systemName: "phone.fill")
+        phoneImage.tintColor = .gray
+        
+        textField3.translateFalse()
+        viewSetting2.addSubview(textField3)
+        textField3.top(viewSetting2.topAnchor, 0)
+        textField3.left(phoneImage.rightAnchor, 0)
+        textField3.right(viewSetting2.rightAnchor, 0)
+        textField3.height(50)
+        textField3.placeholder = "Telefon nomer"
+        textField3.clipsToBounds = true
+        textField3.layer.cornerRadius = 10
+        textField3.backgroundColor = .systemGray6
+
+        
+        buttonsave.translateFalse()
+        view.addSubview(buttonsave)
+        buttonsave.right(view.rightAnchor, -30)
+        buttonsave.bottom(view.bottomAnchor, -120)
+        buttonsave.setTitle("Saqlash", for: .normal)
+        buttonsave.height(50)
+        buttonsave.width(100)
+        buttonsave.clipsToBounds = true
+        buttonsave.layer.cornerRadius = 10
+        buttonsave.backgroundColor = .systemGray4
+        buttonsave.addTarget(self, action: #selector(textBut), for: .touchUpInside)
+        
+        buttonsave1.translateFalse()
+        view.addSubview(buttonsave1)
+        buttonsave1.left(view.leftAnchor, 30)
+        buttonsave1.bottom(view.bottomAnchor, -120)
+        buttonsave1.setTitle("Bekor qilish", for: .normal)
+        buttonsave1.height(50)
+        buttonsave1.width(100)
+        buttonsave1.clipsToBounds = true
+        buttonsave1.layer.cornerRadius = 10
+        buttonsave1.backgroundColor = .systemGray4
+        buttonsave1.addTarget(self, action: #selector(cancelBut), for: .touchUpInside)
         
 
         
@@ -53,14 +141,19 @@ class ProfilViewController: UIViewController {
     }
     
     @objc func textBut() {
-        complition?(textField.text ?? "")
+        complition?(textField1.text ?? "")
+        complition2?(buttonPhoto.image ?? UIImage())
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func cancelBut() {
         navigationController?.popViewController(animated: true)
     }
     
     @objc func photobutton(){
         print("hello photo")
         let vc = UIImagePickerController()
-        vc.sourceType = .camera
+        vc.sourceType = .photoLibrary
         vc.delegate = self
         vc.allowsEditing = true
         present(vc, animated: true)

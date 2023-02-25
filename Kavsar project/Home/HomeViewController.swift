@@ -1,7 +1,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     let search = UISearchController()
     let scroll = UIScrollView()
@@ -105,6 +105,7 @@ class HomeViewController: UIViewController {
         cam.right(searchView.rightAnchor, -10)
         cam.height(40)
         cam.width(40)
+        cam.addTarget(self, action: #selector(camerabutton), for: .touchUpInside)
         cam.setImage(UIImage(systemName: "camera"), for: .normal)
         cam.tintColor = .black
         
@@ -186,6 +187,16 @@ class HomeViewController: UIViewController {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         collectionView.backgroundColor = .systemGray6
+    }
+    
+    @objc func camerabutton(){
+        print("hello photo")
+        let vc = UIImagePickerController()
+        vc.sourceType = .camera
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+        
     }
     
     

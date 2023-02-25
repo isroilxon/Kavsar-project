@@ -25,8 +25,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
         backView.contentMode = .scaleAspectFit
         backView.clipsToBounds = true
         backView.layer.cornerRadius = 10
-        backView.height(200)
-        backView.width(150)
+        backView.height(220)
+        backView.width(170)
         
         img.translateFalse()
         backView.addSubview(img)
