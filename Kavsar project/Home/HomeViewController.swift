@@ -36,6 +36,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate & UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         view.backgroundColor = .white
         title = "Asosiy menyu"
         
@@ -94,8 +95,8 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate & UI
         searchView.addSubview(lupa)
         lupa.centerYAnchor.constraint(equalTo: searchView.centerYAnchor).isActive = true
         lupa.left(searchView.leftAnchor, 10)
-        lupa.height(40)
-        lupa.width(40)
+        lupa.height(30)
+        lupa.width(30)
         lupa.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         lupa.tintColor = .black
         
@@ -103,8 +104,8 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate & UI
         searchView.addSubview(cam)
         cam.centerYAnchor.constraint(equalTo: searchView.centerYAnchor).isActive = true
         cam.right(searchView.rightAnchor, -10)
-        cam.height(40)
-        cam.width(40)
+        cam.height(30)
+        cam.width(30)
         cam.addTarget(self, action: #selector(camerabutton), for: .touchUpInside)
         cam.setImage(UIImage(systemName: "camera"), for: .normal)
         cam.tintColor = .black
@@ -126,7 +127,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate & UI
         scroll.top(textField.bottomAnchor, 20)
         scroll.left(view.leftAnchor, 10)
         scroll.right(view.rightAnchor, -10)
-        scroll.height(110)
+        scroll.height(80)
 
 
         
@@ -149,8 +150,8 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate & UI
             img.top(labelView.topAnchor, 5)
             img.left(labelView.leftAnchor, 5)
             img.right(labelView.rightAnchor, -5)
-            img.height(70)
-            img.width(70)
+            img.height(50)
+            img.width(50)
             img.image = UIImage(named: i.img)
             
             label.translateFalse()
@@ -177,7 +178,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate & UI
         guard let collectionView = collectionView else { return }
         collectionView.translatesAutoresizingMaskIntoConstraints =  false
         view.addSubview(collectionView)
-        collectionView.top(stackView.bottomAnchor, 20)
+        collectionView.top(stackView.bottomAnchor, 10)
         collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         collectionView.bottom(view.bottomAnchor, -90)
@@ -218,4 +219,15 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     
+}
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

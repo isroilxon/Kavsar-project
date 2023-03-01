@@ -38,6 +38,8 @@ class MessageViewController: UIViewController {
         title = "Messages"
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(add))
         navigationItem.searchController = search
+        self.hideKeyboardWhenTappedAround()
+
         table()
 
     }
@@ -56,6 +58,8 @@ class MessageViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(MessageTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.separatorStyle = .none
+
     }
 
 

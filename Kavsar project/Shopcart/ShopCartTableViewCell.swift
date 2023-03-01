@@ -7,9 +7,11 @@ class ShopCartTableViewCell: UITableViewCell {
     let label1 = UILabel()
     let label2 = UILabel()
     let label3 = UILabel()
+    let minusButton = UIButton()
     let buttonP = UIButton()
-    let buttonM = UIButton()
     let viewPM = UIView()
+    let buttomPt = UIButton()
+    let countLabel = UILabel()
      
 
     override func awakeFromNib() {
@@ -26,43 +28,96 @@ class ShopCartTableViewCell: UITableViewCell {
         shopView.top(contentView.topAnchor, 10)
         shopView.left(contentView.leftAnchor, 10)
         shopView.bottom(contentView.bottomAnchor, -10)
+        shopView.right(contentView.rightAnchor, -10)
+        shopView.backgroundColor = .systemGray6
+        shopView.layer.cornerRadius = 15
         
         img.translateFalse()
-        contentView.addSubview(img)
-        img.top(contentView.topAnchor, 10)
-        img.left(contentView.leftAnchor, 10)
-        img.bottom(contentView.bottomAnchor, -10)
-        img.height(120)
-        img.width(120)
+        shopView.addSubview(img)
+        img.top(shopView.topAnchor, 10)
+        img.left(shopView.leftAnchor, 10)
+        img.bottom(shopView.bottomAnchor, -10)
+        img.height(80)
+        img.width(80)
         img.image = UIImage(systemName: "house")
         
         label1.translateFalse()
-        contentView.addSubview(label1)
+        shopView.addSubview(label1)
         label1.left(img.rightAnchor, 10)
-        label1.top(contentView.topAnchor, 10)
-        label1.right(contentView.rightAnchor, -10)
-        label1.font = .systemFont(ofSize: 20)
+        label1.top(shopView.topAnchor, 10)
+        label1.right(shopView.rightAnchor, -10)
+        label1.font = .systemFont(ofSize: 22)
         label1.text = "sbchadc"
         
         label2.translateFalse()
-        contentView.addSubview(label2)
+        shopView.addSubview(label2)
         label2.top(label1.bottomAnchor, 5)
         label2.left(img.rightAnchor, 10)
-        label2.right(contentView.rightAnchor, -10)
-        label2.font = .systemFont(ofSize: 25)
+        label2.right(shopView.rightAnchor, -10)
+        label2.font = .systemFont(ofSize: 15)
         label2.text = "scjbasc"
+        label2.textColor = .gray
         
         label3.translateFalse()
-        contentView.addSubview(label3)
+        shopView.addSubview(label3)
         label3.left(img.rightAnchor, 10)
         label3.top(label2.bottomAnchor, 5)
-        label3.right(contentView.rightAnchor, -10)
+        label3.right(shopView.rightAnchor, -10)
         label3.font = .systemFont(ofSize: 20)
         label3.text = "sjcsdcdj"
         
+        buttomPt.translateFalse()
+        shopView.addSubview(buttomPt)
+        buttomPt.top(shopView.topAnchor, 10)
+        buttomPt.right(shopView.rightAnchor, -10)
+        buttomPt.height(20)
+        buttomPt.width(20)
+        buttomPt.setImage(UIImage(systemName: "square"), for: .normal)
+        buttomPt.tintColor = .black
+        buttomPt.addTarget(self, action: #selector(pitch), for: .touchUpInside)
+
+        viewPM.translateFalse()
+        shopView.addSubview(viewPM)
+        viewPM.right(shopView.rightAnchor, -10)
+        viewPM.bottom(shopView.bottomAnchor, -10)
+        viewPM.backgroundColor = .white
+        viewPM.layer.cornerRadius = 10
+
+        buttonP.translateFalse()
+        viewPM.addSubview(buttonP)
+        buttonP.top(viewPM.topAnchor, 5)
+        buttonP.left(viewPM.leftAnchor, 5)
+        buttonP.bottom(viewPM.bottomAnchor, 5)
+        buttonP.setImage(UIImage(systemName: "plus"), for: .normal)
+        buttonP.tintColor = .black
+        buttonP.height(40)
+        buttonP.width(40)
+        
+        countLabel.translateFalse()
+        viewPM.addSubview(countLabel)
+        countLabel.left(buttonP.rightAnchor, 10)
+        countLabel.centerYAnchor.constraint(equalTo: viewPM.centerYAnchor).isActive = true
+        countLabel.text = "1"
+        countLabel.font = .systemFont(ofSize: 17)
+        
+        minusButton.translateFalse()
+        viewPM.addSubview(minusButton)
+        minusButton.top(viewPM.topAnchor, 5)
+        minusButton.left(countLabel.rightAnchor, 10)
+        minusButton.right(viewPM.rightAnchor, -5)
+        minusButton.bottom(viewPM.bottomAnchor, 5)
+        minusButton.setImage(UIImage(systemName: "minus"), for: .normal)
+        minusButton.tintColor = .black
+        minusButton.height(40)
+        minusButton.width(40)
         
         
-        
+    }
+    
+    @objc func pitch(){
+        buttomPt.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+//        cell.save.setImage(UIImage(systemName: model[button.tag].save ? "bookmark.fill" : "bookmark"), for: .normal)
+
     }
     
     required init?(coder: NSCoder) {

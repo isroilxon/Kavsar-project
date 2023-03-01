@@ -95,27 +95,20 @@ extension AccountViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0{
             let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as! HeaderHome
+            
             header.complition = { item in
                 if item {
                     print("qiymat keldi")
                     let vc = ProfilViewController()
-                    vc.complition = { item in
-                        header.label2.text = item
+                    vc.complition = { text, image in
+                        header.label2.text = text
+                        header.person.image = image
                         print(item)
-                    }
-//                    self.navigationController?.pushViewController(vc, animated: true)
-                }
-            }
-            header.complition2 = { i in
-                if i {
-                    let vc = ProfilViewController()
-                    vc.complition2 = { i in
-                        header.person.image = i
                     }
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
-                
             }
+            
             header.contentView.backgroundColor = .white
             return header
         }

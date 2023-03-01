@@ -13,18 +13,18 @@ class ProfilViewController: UIViewController {
     let textField1 = UITextField()
     let textField2 = UITextField()
     let textField3 = UITextField()
-    var complition: ((String) -> Void)?
-    var complition2: ((UIImage) -> Void)?
+    var complition: ( (String? ,  UIImage?) -> Void)?
     let buttonPhoto = UIImageView()
     let viewSetting = UIView()
     let viewSetting2 = UIView()
     let camera = UIImageView()
     let phoneImage = UIImageView()
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        self.hideKeyboardWhenTappedAround()
         
         viewSetting.translateFalse()
         view.addSubview(viewSetting)
@@ -45,7 +45,7 @@ class ProfilViewController: UIViewController {
         buttonPhoto.layer.cornerRadius = 30
         buttonPhoto.image = UIImage(systemName: "person.circle.fill")
         buttonPhoto.tintColor = .gray
-        let tap = UITapGestureRecognizer(target: self, action: #selector(photobutton))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(showSimpleActionSheet))
         buttonPhoto.addGestureRecognizer(tap)
         buttonPhoto.isUserInteractionEnabled = true
         
@@ -96,7 +96,7 @@ class ProfilViewController: UIViewController {
         phoneImage.width(30)
         phoneImage.height(30)
         phoneImage.image = UIImage(systemName: "phone.fill")
-        phoneImage.tintColor = .gray
+        phoneImage.tintColor = .blue
         
         textField3.translateFalse()
         viewSetting2.addSubview(textField3)
@@ -108,7 +108,7 @@ class ProfilViewController: UIViewController {
         textField3.clipsToBounds = true
         textField3.layer.cornerRadius = 10
         textField3.backgroundColor = .systemGray6
-
+        
         
         buttonsave.translateFalse()
         view.addSubview(buttonsave)
@@ -119,7 +119,7 @@ class ProfilViewController: UIViewController {
         buttonsave.width(100)
         buttonsave.clipsToBounds = true
         buttonsave.layer.cornerRadius = 10
-        buttonsave.backgroundColor = .systemGray4
+        buttonsave.backgroundColor = .blue
         buttonsave.addTarget(self, action: #selector(textBut), for: .touchUpInside)
         
         buttonsave1.translateFalse()
@@ -131,18 +131,18 @@ class ProfilViewController: UIViewController {
         buttonsave1.width(100)
         buttonsave1.clipsToBounds = true
         buttonsave1.layer.cornerRadius = 10
-        buttonsave1.backgroundColor = .systemGray4
+        buttonsave1.backgroundColor = .red
         buttonsave1.addTarget(self, action: #selector(cancelBut), for: .touchUpInside)
         
-
         
         
-
+        
+        
     }
     
     @objc func textBut() {
-        complition?(textField1.text ?? "")
-        complition2?(buttonPhoto.image ?? UIImage())
+        complition?(textField1.text, buttonPhoto.image )
+        //        complition2?(buttonPhoto.image ?? UIImage())
         navigationController?.popViewController(animated: true)
     }
     
@@ -150,17 +150,65 @@ class ProfilViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc func photobutton(){
-        print("hello photo")
-        let vc = UIImagePickerController()
-        vc.sourceType = .photoLibrary
-        vc.delegate = self
-        vc.allowsEditing = true
-        present(vc, animated: true)
+    @objc func showSimpleActionSheet(controller: UIViewController) {
+        let alert = UIAlertController(title: "Profil surati", message: "", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Galereyani ochish", style: .default, handler: { (_) in
+            let vc = UIImagePickerController()
+            vc.sourceType = .photoLibrary
+            vc.delegate = self
+            vc.allowsEditing = true
+            self.present(vc, animated: true)
+        }))
         
+        alert.addAction(UIAlertAction(title: "Kameraga kirish", style: .default, handler: { (_) in
+            let vc = UIImagePickerController()
+            vc.sourceType = .camera
+            vc.delegate = self
+            vc.allowsEditing = true
+            self.present(vc, animated: true)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Bekor qilish", style: .cancel, handler: { (_) in
+            print("User click Dismiss button")
+        }))
+        
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
     }
-
+    
+    //    @objc func photobutton(){
+    //        func showSimpleActionSheet(controller: ProfilViewController) {
+    //            let alert = UIAlertController(title: "Title", message: "Please Select an Option", preferredStyle: .actionSheet)
+    //            alert.addAction(UIAlertAction(title: "Approve", style: .default, handler: { (_) in
+    //                print("User click Approve button")
+    //            }))
+    //
+    //            alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { (_) in
+    //                print("User click Edit button")
+    //            }))
+    //
+    //            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
+    //                print("User click Delete button")
+    //            }))
+    //
+    //            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { (_) in
+    //                print("User click Dismiss button")
+    //            }))
+    //
+    //            self.present(alert, animated: true, completion: {
+    //                print("completion block")
+    //            })
+    //        }
+    //        let vc = UIImagePickerController()
+    //        vc.sourceType = .photoLibrary
+    //        vc.delegate = self
+    //        vc.allowsEditing = true
+    //        present(vc, animated: true)
+    
 }
+
+
 
 extension ProfilViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -176,3 +224,10 @@ extension ProfilViewController: UIImagePickerControllerDelegate, UINavigationCon
     }
     
 }
+
+//    let alertControler = UIAlertController(title: "ogahlantrish", message: "sen like buttum bosding", preferredStyle: .alert)
+//    let action1 = UIAlertAction(title: "ok", style: .default){_ in
+//        print("salom")
+//    }
+//    alertControler.addAction(action1)
+//    self.present(alertControler, animated: true)

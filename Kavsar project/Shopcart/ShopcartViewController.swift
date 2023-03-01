@@ -3,7 +3,7 @@ import UIKit
 
 class ShopcartViewController: UIViewController {
     let tableView = UITableView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -17,8 +17,9 @@ class ShopcartViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ShopCartTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.separatorStyle = .none
         
-
+        
     }
 }
 
@@ -28,9 +29,8 @@ extension ShopcartViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ShopCartTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         return cell
     }
-    
     
 }
