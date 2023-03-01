@@ -11,7 +11,8 @@ class ShopCartTableViewCell: UITableViewCell {
     let buttonP = UIButton()
     let viewPM = UIView()
     let buttomPt = UIButton()
-    let countLabel = UILabel()
+    var countLabel = UILabel()
+    var distance = 1
      
 
     override func awakeFromNib() {
@@ -90,6 +91,7 @@ class ShopCartTableViewCell: UITableViewCell {
         buttonP.bottom(viewPM.bottomAnchor, 5)
         buttonP.setImage(UIImage(systemName: "plus"), for: .normal)
         buttonP.tintColor = .black
+        buttonP.addTarget(self, action: #selector(plusButton), for: .touchUpInside)
         buttonP.height(40)
         buttonP.width(40)
         
@@ -107,6 +109,7 @@ class ShopCartTableViewCell: UITableViewCell {
         minusButton.right(viewPM.rightAnchor, -5)
         minusButton.bottom(viewPM.bottomAnchor, 5)
         minusButton.setImage(UIImage(systemName: "minus"), for: .normal)
+        minusButton.addTarget(self, action: #selector(buttonMinus), for: .touchUpInside)
         minusButton.tintColor = .black
         minusButton.height(40)
         minusButton.width(40)
@@ -118,6 +121,16 @@ class ShopCartTableViewCell: UITableViewCell {
         buttomPt.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
 //        cell.save.setImage(UIImage(systemName: model[button.tag].save ? "bookmark.fill" : "bookmark"), for: .normal)
 
+    }
+    
+    @objc func plusButton(){
+        distance = distance + 1
+        countLabel.text = "\(distance)"
+    }
+    
+    @objc func buttonMinus(){
+        distance = distance - 1
+        countLabel.text = "\(distance)"
     }
     
     required init?(coder: NSCoder) {

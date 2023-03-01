@@ -45,8 +45,8 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate & UI
         navigationController?.navigationBar.tintColor = .black
         
         
-        scrollView()
-        stack()
+//        scrollView()
+//        stack()
         tavar()
         
         
@@ -185,6 +185,7 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate & UI
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(HomeCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "heder")
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         collectionView.backgroundColor = .systemGray6
@@ -205,6 +206,11 @@ class HomeViewController: UIViewController, UIImagePickerControllerDelegate & UI
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
+        return header
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        arr.count
         5

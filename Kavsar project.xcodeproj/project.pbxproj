@@ -31,6 +31,7 @@
 		04DBED89299FD0EB00259FA6 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBED88299FD0EB00259FA6 /* MessageTableViewCell.swift */; };
 		04DBED8B299FD72400259FA6 /* modelForMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBED8A299FD72400259FA6 /* modelForMessage.swift */; };
 		04DBED8D299FEE6B00259FA6 /* ProfilItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBED8C299FEE6B00259FA6 /* ProfilItemsVC.swift */; };
+		04E32C4729AFBFDB00E58186 /* HomeCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E32C4629AFBFDB00E58186 /* HomeCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		04DBED88299FD0EB00259FA6 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		04DBED8A299FD72400259FA6 /* modelForMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelForMessage.swift; sourceTree = "<group>"; };
 		04DBED8C299FEE6B00259FA6 /* ProfilItemsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilItemsVC.swift; sourceTree = "<group>"; };
+		04E32C4629AFBFDB00E58186 /* HomeCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				048FD59A299BA7DC0060A447 /* HomeViewController.swift */,
 				04719D0729A6941100B4F65D /* HomeCollectionViewCell.swift */,
 				04719D0529A6566E00B4F65D /* modelHome.swift */,
+				04E32C4629AFBFDB00E58186 /* HomeCollectionReusableView.swift */,
 				0472F78229AE499100D69CC7 /* ModelGoods.swift */,
 			);
 			path = Home;
@@ -253,6 +256,7 @@
 				04A1AF3129A2DF9200791FC2 /* modelCategory.swift in Sources */,
 				04719D0629A6566E00B4F65D /* modelHome.swift in Sources */,
 				04DBED89299FD0EB00259FA6 /* MessageTableViewCell.swift in Sources */,
+				04E32C4729AFBFDB00E58186 /* HomeCollectionReusableView.swift in Sources */,
 				048FD599299BA7630060A447 /* TabBarViewController.swift in Sources */,
 				048FD597299BA6F60060A447 /* layout.swift in Sources */,
 				048FD57E299BA3CA0060A447 /* AppDelegate.swift in Sources */,
